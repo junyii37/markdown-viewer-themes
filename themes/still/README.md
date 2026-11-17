@@ -4,6 +4,10 @@ A quiet, monochrome reading theme for Markdown Viewer. Inspired by the calm typo
 
 黑白灰、自然留白、柔和代码底色。Still 把重点放在正文上：保留清晰层级，减少装饰，适合中英文笔记、代码和数学推导。
 
+| Light | Dark |
+| :---: | :---: |
+| ![Light](../../screenshots/still/light.webp) | ![Dark](../../screenshots/still/dark.webp) |
+
 ## Install / 安装
 
 1. Download [`still.css`](still.css).
@@ -16,7 +20,7 @@ A quiet, monochrome reading theme for Markdown Viewer. Inspired by the calm typo
 
 ## Design
 
-- 16px system sans-serif body, 1.75 line height, 800px maximum outer width with 28px side padding.
+- 15px system sans-serif body, 1.75 line height, 768px maximum outer width with 28px side padding.
 - White / charcoal backgrounds, neutral inline code and restrained syntax colors.
 - Heading hierarchy without divider lines; tables with horizontal rules and preserved Markdown column alignment.
 - Scrollable code, tables and display math; visible keyboard focus; compact footnotes.

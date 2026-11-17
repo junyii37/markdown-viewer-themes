@@ -2,7 +2,7 @@
 
 Two reading themes for the [Markdown Viewer](https://github.com/simov/markdown-viewer) browser extension. Made for notes, code and mathematical writing; both follow your system's light / dark appearance.
 
-两款面向 Chrome Markdown Viewer 的阅读主题：**Still（留白）**是简洁的黑白灰；**Clay**保留温暖的纸张质感。
+两款面向 Chrome Markdown Viewer 的阅读主题：**Still（留白）** 是简洁的黑白灰；**Clay**保留温暖的纸张质感。
 
 | Theme | Character | CSS | Preview & guide |
 | --- | --- | --- | --- |
@@ -32,6 +32,12 @@ Only one custom theme is active at a time. Switch between Still and Clay by uplo
 | Compiler (markdown-it) | `cjk`, `footnote`, `mark`, `tasklists` | on |
 
 ## Preview
+
+| Still · Light | Still · Dark |
+| :---: | :---: |
+| ![Still light](screenshots/still/light.webp) | ![Still dark](screenshots/still/dark.webp) |
+
+Actual Chrome Markdown Viewer captures. Dark appearance was checked with browser media emulation; no system appearance settings were changed.
 
 - Still: download the repository and open [`themes/still/preview.html`](themes/still/preview.html); use the appearance selector for light / dark previews. For actual extension rendering, open [`themes/still/sample.md`](themes/still/sample.md).
 - Clay: the original [`sample.md`](sample.md), [`clay.css`](clay.css) and screenshots are retained unchanged.
