@@ -1,17 +1,30 @@
 # Still & Clay
 
-Two reading themes for the [Markdown Viewer](https://github.com/simov/markdown-viewer) browser extension. Made for notes, code and mathematical writing; both follow your system's light / dark appearance.
+Two reading themes for the [Markdown Viewer](https://github.com/simov/markdown-viewer) browser extension. Made for notes, code and mathematical writing, with automatic light and dark appearance.
 
-两款面向 Chrome Markdown Viewer 的阅读主题：**Still（留白）** 是简洁的黑白灰；**Clay**保留温暖的纸张质感。
+## Still
 
-| Theme | Character | CSS | Preview & guide |
-| --- | --- | --- | --- |
-| **Still · 留白** | Neutral white / charcoal, focused typography, quiet code blocks | [Download still.css](themes/still/still.css) | [Guide](themes/still/README.md) · [HTML preview](themes/still/preview.html) |
-| **Clay** | Warm off-white / warm gray, paper-like reading | [Download clay.css](clay.css) | [Original guide](themes/clay/README.md) |
+Quiet monochrome colors, focused typography and soft code blocks. Inspired by the reading experience of ChatGPT and Codex; an independent, unofficial theme.
 
-Still draws inspiration from the reading experience of ChatGPT / Codex. It is an independent, unofficial theme, not a copy of proprietary source code or an OpenAI product.
+| Light | Dark |
+| :---: | :---: |
+| ![Still light preview](screenshots/still/light.webp) | ![Still dark preview](screenshots/still/dark.webp) |
 
-## Install / 安装
+[Download Still CSS](themes/still/still.css) · [Installation and design guide](themes/still/README.md) · [Offline HTML preview](themes/still/preview.html) · [Sample Markdown](themes/still/sample.md)
+
+These are actual Chrome Markdown Viewer captures. The dark screenshot uses browser media emulation. Download the HTML preview to switch between light, dark and system appearance locally.
+
+## Clay
+
+A warm, paper-like theme with soft off-white and warm gray backgrounds. The original theme, sample and screenshots are preserved.
+
+| Light | Dark |
+| :---: | :---: |
+| ![Clay light preview](screenshots/light.png) | ![Clay dark preview](screenshots/dark.png) |
+
+[Download Clay CSS](clay.css) · [Original guide](themes/clay/README.md) · [Sample Markdown](sample.md)
+
+## Install
 
 1. Install [Markdown Viewer for Chrome](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk).
 2. Download the CSS for your chosen theme (open its GitHub page and use the raw-file download button).
@@ -21,7 +34,7 @@ Still draws inspiration from the reading experience of ChatGPT / Codex. It is an
 
 Only one custom theme is active at a time. Switch between Still and Clay by uploading the other CSS. Upload again after updating a file; the extension stores its own copy.
 
-主题只改变 Markdown 正文，不改变扩展的设置页面。上传后请打开 `.md` 文件查看效果。
+Themes style the rendered Markdown document, not the extension settings screen. Open a `.md` file to see the result.
 
 ### Recommended settings
 
@@ -30,21 +43,6 @@ Only one custom theme is active at a time. Switch between Still and Clay by uplo
 | Theme | Content Width / Color Scheme | AUTO / AUTO |
 | Content | `mathjax`, `toc`, `autoreload`, `syntax` | on |
 | Compiler (markdown-it) | `cjk`, `footnote`, `mark`, `tasklists` | on |
-
-## Preview
-
-| Still · Light | Still · Dark |
-| :---: | :---: |
-| ![Still light](screenshots/still/light.webp) | ![Still dark](screenshots/still/dark.webp) |
-
-Actual Chrome Markdown Viewer captures. Dark appearance was checked with browser media emulation; no system appearance settings were changed.
-
-- Still: download the repository and open [`themes/still/preview.html`](themes/still/preview.html); use the appearance selector for light / dark previews. For actual extension rendering, open [`themes/still/sample.md`](themes/still/sample.md).
-- Clay: the original [`sample.md`](sample.md), [`clay.css`](clay.css) and screenshots are retained unchanged.
-
-| Clay · Light | Clay · Dark |
-| :---: | :---: |
-| ![Clay light](screenshots/light.png) | ![Clay dark](screenshots/dark.png) |
 
 ## Project layout
 

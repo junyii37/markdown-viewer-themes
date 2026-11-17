@@ -1,14 +1,14 @@
-# Still · 留白
+# Still
 
 A quiet, monochrome reading theme for Markdown Viewer. Inspired by the calm typography of ChatGPT and Codex, without their branding or application chrome. Unofficial; no proprietary fonts or remote assets.
 
-黑白灰、自然留白、柔和代码底色。Still 把重点放在正文上：保留清晰层级，减少装饰，适合中英文笔记、代码和数学推导。
+Neutral colors, generous spacing and soft code backgrounds keep the focus on your writing. Designed for English and Chinese notes, code and mathematical reasoning.
 
 | Light | Dark |
 | :---: | :---: |
 | ![Light](../../screenshots/still/light.webp) | ![Dark](../../screenshots/still/dark.webp) |
 
-## Install / 安装
+## Install
 
 1. Download [`still.css`](still.css).
 2. Markdown Viewer → **Advanced Options → Settings**.
@@ -16,7 +16,7 @@ A quiet, monochrome reading theme for Markdown Viewer. Inspired by the calm typo
 4. Set **Color Scheme → AUTO** and **Content Width → AUTO**. Reload your Markdown tab.
 5. For local files, enable **Allow access to file URLs** in Chrome's extension details.
 
-更新文件后需再次点击 UPDATE 上传，扩展不会自动读取磁盘上的 CSS 修改。AUTO 跟随操作系统外观；扩展的 LIGHT / DARK 设置不是此主题的手动外观切换器。
+After editing the CSS, upload it again with UPDATE: the extension stores a copy and does not watch the file on disk. AUTO follows your operating system appearance. The extension's LIGHT / DARK setting does not manually switch this theme's CSS palette.
 
 ## Design
 
@@ -27,7 +27,7 @@ A quiet, monochrome reading theme for Markdown Viewer. Inspired by the calm typo
 - The table of contents hides below 900px so it cannot squeeze the reading column. It returns on wider windows.
 - No scripts or external resources in the uploaded CSS. Under 8KB even before minification.
 
-## Preview / 验收
+## Preview
 
 Open [`preview.html`](preview.html) for an offline light / dark / system preview. It embeds a copy of the release CSS and does not load MathJax or the extension.
 
