@@ -1,0 +1,87 @@
+/* Still 1.0 — a quiet Markdown Viewer theme. CUSTOM / AUTO. MIT. */
+:root {
+  --bg:#fff; --surface:#f5f5f5; --text:#171717; --muted:#676767;
+  --border:#e5e5e5; --selection:#dce8f5;
+  --comment:#646b73; --punct:#555; --keyword:#7545a0; --string:#08765d;
+  --number:#965400; --function:#245ea3; --property:#9b365c;
+  color-scheme:light;
+}
+@media(prefers-color-scheme:dark) {
+  :root {
+    --bg:#212121; --surface:#2b2b2b; --text:#ececec; --muted:#b4b4b4;
+    --border:#414141; --selection:#3b5068;
+    --comment:#a2a2a2; --punct:#c5c5c5; --keyword:#c6a4ee; --string:#a4d99c;
+    --number:#e9bd88; --function:#91bff0; --property:#e8a5bb;
+    color-scheme:dark;
+  }
+}
+html,body { background:var(--bg)!important; color:var(--text); }
+body { -webkit-font-smoothing:antialiased; }
+.markdown-theme {
+  box-sizing:border-box; min-width:0; max-width:100%!important;
+  font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:16px; line-height:1.75; color:var(--text);
+  padding:40px 28px 88px!important; margin:0 auto!important; overflow-wrap:anywhere;
+}
+.markdown-theme:not([class*="_width-"]) { width:100%!important; max-width:800px!important; }
+.markdown-theme h1,.markdown-theme h2,.markdown-theme h3,.markdown-theme h4,.markdown-theme h5,.markdown-theme h6 {
+  color:var(--text); font-weight:600; line-height:1.4; margin:1.6em 0 .65em;
+  border:0; padding:0; scroll-margin-top:24px;
+}
+.markdown-theme h1 { font-size:1.875em; letter-spacing:-.025em; }
+.markdown-theme h2 { font-size:1.5em; letter-spacing:-.018em; }
+.markdown-theme h3 { font-size:1.25em; }
+.markdown-theme h4 { font-size:1.0625em; }
+.markdown-theme h5,.markdown-theme h6 { font-size:1em; }
+.markdown-theme > :first-child { margin-top:0; }
+.markdown-theme .anchor { display:none; }
+.markdown-theme p,.markdown-theme ul,.markdown-theme ol,.markdown-theme pre,.markdown-theme table,.markdown-theme blockquote,.markdown-theme dl { margin:0 0 1.25em; }
+.markdown-theme strong,.markdown-theme dt { font-weight:600; }
+.markdown-theme a { color:inherit; text-decoration:underline; text-decoration-color:var(--muted); text-underline-offset:3px; }
+.markdown-theme a:hover { text-decoration-color:currentColor; }
+.markdown-theme a:focus-visible,#_toc a:focus-visible,.markdown-theme summary:focus-visible { outline:2px solid var(--muted); outline-offset:4px; border-radius:3px; }
+.markdown-theme ul,.markdown-theme ol { padding-left:1.65em; }
+.markdown-theme li { padding-left:.15em; }
+.markdown-theme li+li { margin-top:.3em; }
+.markdown-theme li>p { margin:.4em 0; }
+.markdown-theme li>ul,.markdown-theme li>ol { margin:.4em 0; }
+.markdown-theme li::marker { color:var(--muted); }
+.markdown-theme dd { margin:.25em 0 1em 1.5em; }
+.markdown-theme blockquote { border-left:3px solid var(--border); padding:.1em 0 .1em 1em; color:var(--muted); }
+.markdown-theme blockquote>:last-child { margin-bottom:0; }
+.markdown-theme hr { border:0; border-top:1px solid var(--border); margin:2em 0; }
+.markdown-theme mark { background:var(--surface); color:inherit; padding:.1em .2em; border-radius:3px; }
+.markdown-theme img { max-width:100%; height:auto; border-radius:8px; }
+.markdown-theme code,.markdown-theme kbd { font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace; font-size:.875em; }
+.markdown-theme :not(pre)>code { background:var(--surface)!important; color:var(--text)!important; padding:.16em .36em; border-radius:4px; }
+.markdown-theme pre,.markdown-theme pre[class*="language-"] { background:var(--surface)!important; color:var(--text)!important; border:0; border-radius:12px; padding:18px 20px!important; overflow:auto; line-height:1.65; tab-size:4; }
+.markdown-theme pre code,.markdown-theme pre code[class*="language-"] { display:block; color:var(--text)!important; background:transparent!important; text-shadow:none!important; font-size:14px; line-height:inherit; white-space:pre; overflow-wrap:normal; word-break:normal; padding:0; }
+.markdown-theme pre code::before,.markdown-theme pre code::after { content:none; }
+.markdown-theme pre .token { background:none!important; text-shadow:none!important; }
+.markdown-theme .token.comment,.markdown-theme .token.prolog,.markdown-theme .token.doctype,.markdown-theme .token.cdata { color:var(--comment)!important; }
+.markdown-theme .token.punctuation,.markdown-theme .token.operator { color:var(--punct)!important; }
+.markdown-theme .token.keyword,.markdown-theme .token.atrule,.markdown-theme .token.important,.markdown-theme .token.selector { color:var(--keyword)!important; }
+.markdown-theme .token.string,.markdown-theme .token.char,.markdown-theme .token.attr-value,.markdown-theme .token.regex,.markdown-theme .token.inserted { color:var(--string)!important; }
+.markdown-theme .token.number,.markdown-theme .token.boolean,.markdown-theme .token.constant,.markdown-theme .token.symbol { color:var(--number)!important; }
+.markdown-theme .token.function,.markdown-theme .token.class-name,.markdown-theme .token.builtin { color:var(--function)!important; }
+.markdown-theme .token.property,.markdown-theme .token.tag,.markdown-theme .token.attr-name,.markdown-theme .token.variable,.markdown-theme .token.deleted { color:var(--property)!important; }
+.markdown-theme table { display:block; max-width:100%; overflow-x:auto; border-collapse:collapse; font-size:.9375em; }
+.markdown-theme th,.markdown-theme td { border:0; border-bottom:1px solid var(--border); padding:.7em 1em; }
+.markdown-theme th { text-align:left; font-weight:600; }
+.markdown-theme th:first-child,.markdown-theme td:first-child { padding-left:0; }
+.markdown-theme th:last-child,.markdown-theme td:last-child { padding-right:0; }
+.markdown-theme .task-list-item { list-style:none; }
+.markdown-theme .task-list-item input { margin:0 .55em 0 -1.45em; accent-color:var(--text); }
+.markdown-theme .footnotes { font-size:.875em; color:var(--muted); }
+.markdown-theme kbd { padding:.1em .35em; border:1px solid var(--border); border-bottom-width:2px; border-radius:4px; }
+.markdown-theme details { margin:1.25em 0; }
+.markdown-theme summary { cursor:pointer; font-weight:600; }
+.markdown-theme details[open]>summary { margin-bottom:.75em; }
+.markdown-theme mjx-container[display="true"],.markdown-theme .katex-display { max-width:100%; overflow-x:auto; overflow-y:hidden; padding:.25em 0; }
+#_toc { background:var(--bg); color:var(--muted); border-right:1px solid var(--border)!important; font:14px/1.5 ui-sans-serif,-apple-system,"PingFang SC",sans-serif; }
+#_toc a { color:var(--muted); text-decoration:none; border-radius:6px; }
+#_toc a:hover { color:var(--text); background:var(--surface); }
+::selection { background:var(--selection); color:var(--text); }
+@media(max-width:900px) { html body._toc-left,html body._toc-right { padding-left:0!important; padding-right:0!important; } #_toc { display:none; } }
+@media(max-width:600px) { .markdown-theme { padding:28px 20px 56px!important; } .markdown-theme h1 { font-size:1.65em; } .markdown-theme pre { padding:16px!important; } }
+@media print { :root { --bg:#fff; --surface:#f5f5f5; --text:#171717; --muted:#555; --border:#ddd; --comment:#555; --punct:#333; --keyword:#7545a0; --string:#08765d; --number:#965400; --function:#245ea3; --property:#9b365c; color-scheme:light; } .markdown-theme { width:100%!important; max-width:none!important; padding:0!important; } }

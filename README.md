@@ -1,61 +1,64 @@
-# Clay
+# Still & Clay
 
-A warm, paper-like theme for the [Markdown Viewer](https://github.com/simov/markdown-viewer) browser extension, tuned for math-heavy notes. It switches between a soft off-white and a warm dark gray with your system's appearance.
+Two reading themes for the [Markdown Viewer](https://github.com/simov/markdown-viewer) browser extension. Made for notes, code and mathematical writing; both follow your system's light / dark appearance.
 
+两款面向 Chrome Markdown Viewer 的阅读主题：**Still（留白）**是简洁的黑白灰；**Clay**保留温暖的纸张质感。
 
-| Light | Dark |
-| :---: | :---: |
-| ![Light mode](screenshots/light.png) | ![Dark mode](screenshots/dark.png) |
+| Theme | Character | CSS | Preview & guide |
+| --- | --- | --- | --- |
+| **Still · 留白** | Neutral white / charcoal, focused typography, quiet code blocks | [Download still.css](themes/still/still.css) | [Guide](themes/still/README.md) · [HTML preview](themes/still/preview.html) |
+| **Clay** | Warm off-white / warm gray, paper-like reading | [Download clay.css](clay.css) | [Original guide](themes/clay/README.md) |
 
-## Features
+Still draws inspiration from the reading experience of ChatGPT / Codex. It is an independent, unofficial theme, not a copy of proprietary source code or an OpenAI product.
 
-- **Follows your system.** Light and dark palettes switch automatically with macOS / Windows appearance.
-- **Readable line length.** With Content Width set to `AUTO`, text is capped at 920px and centered. Other width options still work.
-- **Math-friendly.** Calm heading sizes, comfortable line height, and long display formulas scroll horizontally instead of overflowing.
-- **Self-contained syntax colors.** Code highlighting is defined by the theme itself, so code stays readable even when the extension loads the code palette for the wrong color scheme (for example after switching appearance without reloading the page).
-- **Small.** About 5 KB after minification, well within the extension's 8 KB limit for custom themes.
+## Install / 安装
 
-## Install
+1. Install [Markdown Viewer for Chrome](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk).
+2. Download the CSS for your chosen theme (open its GitHub page and use the raw-file download button).
+3. Open **Advanced Options → Settings**, select **Content Theme → CUSTOM**, then **ADD / UPDATE** and choose the CSS file.
+4. Set **Color Scheme → AUTO** and **Content Width → AUTO**, then reload the Markdown tab.
+5. For local notes, enable **Allow access to file URLs** in Chrome → Extensions → Markdown Viewer → Details.
 
-1. Install [Markdown Viewer](https://chromewebstore.google.com/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk) and, for local files, turn on **Allow access to file URLs** in `chrome://extensions` → Markdown Viewer → Details.
-2. Download [`clay.css`](clay.css) (open it, then use the download button, or save the raw file).
-3. Click the extension icon → **Advanced Options** → **Settings**.
-4. Set **Content Theme** to `CUSTOM`, upload `clay.css`, and set **Color Scheme** to `AUTO`.
-5. Reload any open Markdown page.
+Only one custom theme is active at a time. Switch between Still and Clay by uploading the other CSS. Upload again after updating a file; the extension stores its own copy.
+
+主题只改变 Markdown 正文，不改变扩展的设置页面。上传后请打开 `.md` 文件查看效果。
 
 ### Recommended settings
 
-| Section | Option | Value |
+| Section | Options | Value |
 | --- | --- | --- |
+| Theme | Content Width / Color Scheme | AUTO / AUTO |
 | Content | `mathjax`, `toc`, `autoreload`, `syntax` | on |
 | Compiler (markdown-it) | `cjk`, `footnote`, `mark`, `tasklists` | on |
-| Theme | Content Width | `AUTO` |
 
-Want smaller text? Press <kbd>Cmd</kbd> + <kbd>-</kbd> (or <kbd>Ctrl</kbd> + <kbd>-</kbd>) on a Markdown page. Chrome remembers the zoom level for local files.
+## Preview
 
-## Known limitation
+- Still: download the repository and open [`themes/still/preview.html`](themes/still/preview.html); use the appearance selector for light / dark previews. For actual extension rendering, open [`themes/still/sample.md`](themes/still/sample.md).
+- Clay: the original [`sample.md`](sample.md), [`clay.css`](clay.css) and screenshots are retained unchanged.
 
-Formulas inside headings appear as raw TeX (for example `$L^p$`) in the table of contents sidebar. The extension intentionally skips math rendering there, so a theme cannot change it.
+| Clay · Light | Clay · Dark |
+| :---: | :---: |
+| ![Clay light](screenshots/light.png) | ![Clay dark](screenshots/dark.png) |
 
-## Try it
+## Project layout
 
-Open [`sample.md`](sample.md) in Chrome with the theme installed. It covers math, code, tables, quotes, task lists, and footnotes.
+```text
+clay.css                  Original Clay theme (compatible path)
+sample.md                 Original Clay sample
+screenshots/              Original Clay screenshots
+themes/clay/README.md     Original Clay guide and creation notes
+themes/still/still.css    Still theme
+themes/still/preview.html Standalone appearance preview
+themes/still/sample.md    Extension rendering sample
+scripts/sync_preview.py   Refresh preview CSS after edits
+```
 
-## Build cost
+## Development
 
-This theme was vibe-coded with an AI assistant (Claude Opus 5.5). Listing the cost helps you decide whether to fork this or build your own:
+The CSS files are self-contained; no build tools or downloaded fonts are needed. After editing Still, run `python3 scripts/sync_preview.py`. Keep the uploaded CSS below the extension's 8KB limit. Check light and dark appearance, narrow windows, long code lines, tables, formulas and the ToC before release.
 
-| | Approx. |
-| --- | --- |
-| Model calls | ~50 |
-| Tokens processed | ~11M (mostly cached context re-reads) |
-| Tokens generated | ~26K |
-| Equivalent API cost | ~$4.2 |
-
-This covers designing the theme, rendering test notes in light and dark mode, and fixing the issues found along the way (unreadable code in light mode, overly long lines, centered table headers). It excludes publishing this repository.
-
-The dollar figure uses Claude Opus 5.5 API list prices as of October 2026 ($4 input, $20 output, $8 cache write, $0.20 cache read per million tokens). Prices change and subscription plans are not billed per token, so treat it as a rough guide; the token counts above are the more durable measure.
+Local working directory: `/Users/hejunyi/Documents/codexspace/markdown-viewer-themes`.
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE). Original Clay theme and license retained. See the [Clay guide](themes/clay/README.md) for the original creation notes.
